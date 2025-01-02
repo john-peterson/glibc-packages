@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+export U=$PREFIX/../ubuntu
+export PATH+=:$U/usr/bin:$U/usr/games
+conf=$U/conf
+alias uapt="apt -c=$conf"
+alias uapt-cache="apt-cache -c $conf"
+alias uapt-config="apt-config -c $conf"
+alias uapt-file="apt-file -c $conf"
+alias uapt-mark="apt-mark -c $conf"
+
+unset LD_PRELOAD
+
+export R_HOME=$U/usr/lib/R
+export EDITOR=vim
+alias R="$U/usr/lib/R/bin/exec/R --save"
+
+export DOTNET_ROOT=$U/usr/lib/dotnet
+export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+touch ~/.local/share/NuGet/Migrations/1
+touch ~/.dotnet/8.0.111.dotnetFirstUseSentinel
