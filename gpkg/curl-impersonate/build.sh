@@ -1,8 +1,8 @@
 # how do you build this fork
-# https://github.com/lexiforest/curl-impersonate
+TERMUX_PKG_SRCURL=git+https://github.com/lexiforest/curl-impersonate
 
 # this insane script tries to build brotli and fail
-TERMUX_PKG_SRCURL=git+https://github.com/lwthiker/curl-impersonate
+# TERMUX_PKG_SRCURL=git+https://github.com/lwthiker/curl-impersonate
 TERMUX_PKG_GIT_BRANCH=main
 TERMUX_PKG_BUILD_IN_SRC=true
 
@@ -16,8 +16,8 @@ TERMUX_PKG_DESCRIPTION="curl impersonation for curl_cffi"
 TERMUX_PKG_VERSION=8.1.1
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_BUILD_DEPENDS="golang"
-TERMUX_PKG_DEPENDS="boringssl-glibc, brotli-glibc, libnghttp2-glibc, zlib-glibc"
-# TERMUX_PKG_DEPENDS=" libnghttp2-glibc, libnghttp3-glibc, libssh2-glibc"
+TERMUX_PKG_DEPENDS="  brotli-glibc, libnghttp2-glibc, zlib-glibc, zstd-glibc"
+# TERMUX_PKG_DEPENDS=" boringssl-glibc, libnghttp2-glibc, libnghttp3-glibc, libssh2-glibc"
 
 # TERMUX_PKG_EXTRA_MAKE_ARGS=" -j4 "
 TERMUX_PKG_MAKE_PROCESSES=4
@@ -44,7 +44,8 @@ export MAKEFLAGS=-j4
 # sed -i '/unzip/i \\tpwd\n\tls' Makefile
 # ack -C pwd Makefile
 # exit
-make chrome-build 
+# make chrome-build 
+make build
 }
 
 # termux_step_make_install() {
