@@ -1,0 +1,11 @@
+#!/bin/sh
+set -x
+rooted=false
+for a in $@; do
+	test $a = --root && rooted=true
+done
+if $rooted; then
+	$PREFIX/glibc/libexec/dpkg  $@
+else
+	$PREFIX/glibc/libexec/dpkg --root $PREFIX/glibc $@
+fi
