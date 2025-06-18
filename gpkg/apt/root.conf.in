@@ -1,0 +1,14 @@
+// vim:ft=aptconf
+/* vi:set ft=aptconf */
+APT::Install-Recommends "0";
+APT::Clean-Installed "0";
+/* APT::Architecture "arm64"; */
+Dir::Bin::dpkg "@TERMUX_PREFIX@/bin/dpkg";
+Dir::Cache "@TERMUX_CACHE_DIR@/apt";
+/* Dir::Etc::sourcelist "/data/data/com.termux/debian/d.sources"; */
+/* Dir::Etc::sourceparts ""; */
+Dir::State "@TERMUX_PREFIX@/var/lib/apt";
+/* Dir::State::status "/data/data/com.termux/debian/dpkg/status"; */
+dpkg::options {
+"--root=@TERMUX_PREFIX@";
+};
