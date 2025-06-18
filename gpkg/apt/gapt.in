@@ -1,0 +1,4 @@
+#!/bin/sh
+# vim:ft=sh
+test $# -gt 0 || (echo glibc apt foor non-chroot && exit)
+apt -c @TERMUX_PREFIX@/etc/apt/root.conf
